@@ -1,0 +1,36 @@
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    Division
+                </div>
+                <div class="card-body">
+                    <a routerLink="/divisions-add" class="btn btn-primary mb-2">Tambahkan data baru</a>
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let currentDivision of divisions; let i = index">
+                            <tr>
+                                <td>{{ currentDivision._id }}</td>
+                                <td>{{ currentDivision.name }}</td>
+                                <td>{{ currentDivision.description }}</td>
+
+                                <td>
+                                    <a class="btn btn-warning text-white btn-sm mr-3" [routerLink]="['/divisions-edit/' + currentDivision._id + '/edit']">Edit</a>
+                                    <a class="btn btn-danger btn-sm" (click)="deleteDivision(currentDivision)">Hapus</a>
+                                </td>                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12 p-4">
+            <div class="submit-form">
+                <div *ngIf="!submitted">
+                    <div class="form-group">
+                        <label for="name">Nama Divisi</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            required
+                            [(ngModel)]="division.name"
+                            name="name"
+                        />
+                    </div>
+            
+                    <div class="form-group">
+                    <label for="description">Deskripsi</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="description"
+                        required
+                        [(ngModel)]="division.description"
+                        name="description"
+                    />
+                    </div>
+            
+                    <button (click)="saveDivision()" class="btn btn-success">Tambahkan</button>
+                </div>
+            
+                <div *ngIf="submitted">
+                    <h4>Division berhasil ditambahkan!</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
